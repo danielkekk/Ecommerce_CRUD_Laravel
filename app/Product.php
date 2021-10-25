@@ -18,6 +18,6 @@ class Product extends Model
 	public $timestamps = true;
   
     protected $fillable = [
-        'id','category', 'description','name', 'image_path', 'price', 'type', 'amount'
+        'id','category', 'description','name', 'image_path', 'price', 'type', 'amount',
     ];
 }
