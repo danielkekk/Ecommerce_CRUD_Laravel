@@ -47,6 +47,7 @@ class ProductController extends Controller
             'category' => 'required',
             'price' => 'required',
             'amount' => 'required',
+            'barcode' => 'required|max:13',
         ]);
 
 		$request->merge([
@@ -97,6 +98,7 @@ class ProductController extends Controller
             'category' => 'required',
             'price' => 'required',
             'amount' => 'required',
+            'barcode' => 'required|max:13',
         ]);
     
         $product->update($request->all());

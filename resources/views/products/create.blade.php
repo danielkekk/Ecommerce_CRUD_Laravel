@@ -65,6 +65,13 @@
         </div>
     </div>
 
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Barcode:</label>
+        <div class="col-sm-10">
+            <input type="number" name="barcode" class="form-control" placeholder="Barcode"/>
+        </div>
+    </div>
+
      <div class="form-group">
          <div class="col-sm-2">
              <button type="submit" class="btn btn-primary">Save</button>

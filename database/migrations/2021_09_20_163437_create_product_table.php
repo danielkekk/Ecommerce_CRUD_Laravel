@@ -22,6 +22,7 @@ class CreateProductTable extends Migration
             $table->string('name')->nullable();
             $table->double('amount')->nullable();
             $table->string('price')->nullable();
+            $table->string('barcode')->nullable();
 	    $table->timestamps();
         });
     }
