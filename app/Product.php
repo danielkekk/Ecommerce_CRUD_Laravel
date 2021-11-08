@@ -20,4 +20,12 @@ class Product extends Model
     protected $fillable = [
         'id','category', 'description','name', 'image_path', 'price', 'type', 'amount', 'barcode'
     ];
+
+    /**
+     * Get the post that owns the comment.
+     */
+    public function unit()
+    {
+        return $this->belongsTo('App\Unit');
+    }
 }
