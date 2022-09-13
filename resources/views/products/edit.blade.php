@@ -48,7 +48,11 @@
         <div class="form-group">
             <label class="col-sm-2 control-label">Category:</label>
             <div class="col-sm-10">
-                <input type="text" name="category" value="{{ $product->category }}" class="form-control" placeholder="Category"/>
+                <select name="category_id" id="category_id">
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->category_id }}" {{ ($product->category_id === $category->category_id) ? 'selected' : '' }}>{{$category->name}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
 
@@ -72,6 +76,17 @@
             <label class="col-sm-2 control-label">Barcode:</label>
             <div class="col-sm-10">
                 <input type="number" name="barcode" value="{{ $product->barcode }}" class="form-control" placeholder="Barcode"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Unit:</label>
+            <div class="col-sm-10">
+                <select name="unit_id" id="unit_id">
+                    @foreach ($units as $unit)
+                        <option value="{{ $unit->id }}" {{ ($product->unit_id === $unit->id) ? 'selected' : '' }}>{{$unit->unit}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
 

@@ -44,12 +44,16 @@
          </div>
      </div>
 
-     <div class="form-group">
-         <label class="col-sm-2 control-label">Category:</label>
-         <div class="col-sm-10">
-             <input type="text" name="category" class="form-control" placeholder="Category"/>
-         </div>
-     </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Category:</label>
+        <div class="col-sm-10">
+            <select name="category_id" id="category_id">
+                @foreach ($categories as $category)
+                    <option value="{{ $category->category_id }}">{{$category->name}}</option>
+                @endforeach
+            </select>
+        </div>
+    </div>
 
      <div class="form-group">
          <label class="col-sm-2 control-label">Price:</label>
@@ -69,6 +73,17 @@
         <label class="col-sm-2 control-label">Barcode:</label>
         <div class="col-sm-10">
             <input type="number" name="barcode" class="form-control" placeholder="Barcode"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Unit:</label>
+        <div class="col-sm-10">
+            <select name="unit_id" id="unit_id">
+                @foreach ($units as $unit)
+                    <option value="{{ $unit->id }}">{{$unit->unit}}</option>
+                @endforeach
+            </select>
         </div>
     </div>
 

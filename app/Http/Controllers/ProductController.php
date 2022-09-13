@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Unit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -29,7 +30,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        $units = Unit::all();
+
+        return view('products.create')->with('units', $units);
     }
     
     /**
@@ -48,6 +51,7 @@ class ProductController extends Controller
             'price' => 'required',
             'amount' => 'required',
             'barcode' => 'required|max:13',
+            'unit_id' => 'required|integer',
         ]);
 
 		$request->merge([
@@ -79,7 +83,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('products.edit',compact('product'));
+        $units = Unit::all();
+
+        return view('products.edit',compact('product'))->with('units', $units);
     }
     
     /**
@@ -99,8 +105,9 @@ class ProductController extends Controller
             'price' => 'required',
             'amount' => 'required',
             'barcode' => 'required|max:13',
+            'unit_id' => 'required|integer',
         ]);
-    
+
         $product->update($request->all());
     
         return redirect()->route('products.index')
