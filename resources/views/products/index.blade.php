@@ -23,13 +23,14 @@
 				<th>Edit</th>
 				<th>Delete</th>
 			</tr>
+			<?php //print_r($products[0]->unit); exit;?>
 			@foreach ($products as $product)
 				<tr>
 					<td>{{ $product->id }}</td>
 					<td>{{ $product->name }}</td>
 					<td>{{ $product->description }}</td>
 					<td>{{ $product->type }}</td>
-					<td>{{ $product->category }}</td>
+					<td>{{ $product->category->name }}</td>
 					<td>{{ $product->price }}</td>
 					<td>{{ $product->amount }}</td>
 					<td>{{ $product->unit->unit }}</td>

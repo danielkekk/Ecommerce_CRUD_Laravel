@@ -17,13 +17,14 @@ class CreateProductTable extends Migration
             $table->charset = 'utf8mb4';
             $table->collation = 'utf8mb4_general_ci';
             $table->string('id')->primary();
-            $table->string('category')->nullable();
+            $table->integer('category_id')->nullable();
             $table->string('description')->nullable();
             $table->string('name')->nullable();
             $table->double('amount')->nullable();
             $table->string('price')->nullable();
             $table->string('barcode')->nullable();
-	    $table->timestamps();
+            $table->integer('unit_id');
+	        $table->timestamps();
         });
     }
 

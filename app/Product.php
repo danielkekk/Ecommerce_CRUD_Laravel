@@ -18,13 +18,13 @@ class Product extends Model
 	public $timestamps = true;
   
     protected $fillable = [
-        'id', 'category_category_id', 'description','name', 'image_path', 'price', 'type', 'amount', 'barcode', 'unit_id'
+        'id', 'category_id', 'description','name', 'image_path', 'price', 'type', 'amount', 'barcode', 'unit_id'
     ];
 
     /**
      * Get the post that owns the comment.
      */
-    public function category_category()
+    public function category()
     {
         return $this->belongsTo('App\Category');
     }

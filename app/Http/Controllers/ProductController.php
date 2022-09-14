@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Unit;
+use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -31,8 +32,9 @@ class ProductController extends Controller
     public function create()
     {
         $units = Unit::all();
+        $categories = Category::all();
 
-        return view('products.create')->with('units', $units);
+        return view('products.create',['units' => $units, 'categories' => $categories]);
     }
     
     /**
@@ -84,8 +86,11 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $units = Unit::all();
+        $categories = Category::all();
 
-        return view('products.edit',compact('product'))->with('units', $units);
+        //return view('products.create',['units' => $units, 'categories' => $categories]);
+
+        return view('products.edit',['product' => $product,'units' => $units, 'categories' => $categories]);
     }
     
     /**
