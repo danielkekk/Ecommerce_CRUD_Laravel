@@ -16,8 +16,21 @@ class UnitSeeder extends Seeder
     public function run()
     {
         Unit::create([
-            'name' => 'kg',
+            'id' => 1,
+            'name' => 'Kilogram',
             'unit' => 'kg',
+        ]);
+
+        Unit::create([
+            'id' => 2,
+            'name' => 'Gram',
+            'unit' => 'g',
+        ]);
+
+        Unit::create([
+            'id' => 3,
+            'name' => 'Pieces',
+            'unit' => 'pcs',
         ]);
     }
 }

@@ -18,13 +18,24 @@ class ProductSeeder extends Seeder
     {
         DB::table('product')->insert([
             'id' => Str::uuid(),
-            'category_id' => 1,
+            'category_id' => 3,
             'description' => Str::random(20),
             'name' => Str::random(30),
             'amount' => mt_rand(1, 100),
             'price' => mt_rand(1, 100) / 10.0,
             'barcode' => mt_rand(10000, 99999),
             'unit_id' => 1
+        ]);
+
+        DB::table('product')->insert([
+            'id' => Str::uuid(),
+            'category_id' => 2,
+            'description' => Str::random(20),
+            'name' => Str::random(30),
+            'amount' => mt_rand(1, 100),
+            'price' => mt_rand(1, 100) / 10.0,
+            'barcode' => mt_rand(10000, 99999),
+            'unit_id' => 3
         ]);
     }
 }

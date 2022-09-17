@@ -19,7 +19,20 @@ class CategorySeeder extends Seeder
     public function run()
     {
         Category::create([
-            'name' => 'Books',
+            'id' => 1,
+            'name' => 'BARS',
+            'parent_id' => '0',
+        ]);
+
+        Category::create([
+            'id' => 2,
+            'name' => 'DAIRY PRODUCTS',
+            'parent_id' => '0',
+        ]);
+
+        Category::create([
+            'id' => 3,
+            'name' => 'VEGETABLES',
             'parent_id' => '0',
         ]);
     }

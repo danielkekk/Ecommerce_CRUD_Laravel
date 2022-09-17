@@ -8,6 +8,7 @@ use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
@@ -45,16 +46,19 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $messages = [
+            'name.required' => 'A :attribute mező megadása kötelező.',
+        ];
+
+        Validator::make($request->all(), [
             'name' => 'required',
             'description' => 'required',
-            'type' => 'required',
-            'category' => 'required',
+            'category_id' => 'required|integer',
             'price' => 'required',
             'amount' => 'required',
             'barcode' => 'required|max:13',
             'unit_id' => 'required|integer',
-        ]);
+        ],$messages)->validate();
 
 		$request->merge([
           'id' => Str::orderedUuid(),
@@ -102,16 +106,19 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        $request->validate([
+        $messages = [
+            'name.required' => 'A :attribute mező megadása kötelező.',
+        ];
+
+        Validator::make($request->all(), [
             'name' => 'required',
             'description' => 'required',
-            'type' => 'required',
-            'category' => 'required',
+            'category_id' => 'required|integer',
             'price' => 'required',
             'amount' => 'required',
             'barcode' => 'required|max:13',
             'unit_id' => 'required|integer',
-        ]);
+        ],$messages)->validate();
 
         $product->update($request->all());
     

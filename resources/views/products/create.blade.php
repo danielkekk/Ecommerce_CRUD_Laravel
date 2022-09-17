@@ -37,19 +37,12 @@
          </div>
      </div>
 
-     <div class="form-group">
-         <label class="col-sm-2 control-label">Type:</label>
-         <div class="col-sm-10">
-             <input type="text" name="type" class="form-control" placeholder="Type"/>
-         </div>
-     </div>
-
     <div class="form-group">
         <label class="col-sm-2 control-label">Category:</label>
         <div class="col-sm-10">
             <select name="category_id" id="category_id">
                 @foreach ($categories as $category)
-                    <option value="{{ $category->category_id }}">{{$category->name}}</option>
+                    <option value="{{ $category->id }}">{{$category->name}}</option>
                 @endforeach
             </select>
         </div>
