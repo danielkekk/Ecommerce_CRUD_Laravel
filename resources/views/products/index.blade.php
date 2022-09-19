@@ -22,7 +22,6 @@
 				<th>Edit</th>
 				<th>Delete</th>
 			</tr>
-			<?php //print_r($products[0]->unit); exit;?>
 			@foreach ($products as $product)
 				<tr>
 					<td>{{ $product->id }}</td>
@@ -46,6 +45,6 @@
 		</table>
 	@endif
   
-    {!! $products->links() !!}
+	{!! $products->links() !!}
       
 @endsection
