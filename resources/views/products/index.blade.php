@@ -37,12 +37,13 @@
 						<form action="{{ route('products.destroy',$product->id) }}" method="POST">
 							@csrf
 							@method('DELETE')
-							<button type="submit" class="btn btn-danger">Delete</button>
+							<button type="submit" class="btn btn-danger show_confirm">Delete</button>
 						</form>
 					</td>
 				</tr>
 			@endforeach
 		</table>
+		<script src="{{ URL::to('/assets/js/delete_confirmation.js') }}"></script>
 	@endif
   
 	{!! $products->links() !!}
