@@ -2,13 +2,14 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class ProductSeeder extends Seeder
 {
+    const NUMBER_OF_PRODCTS = 20;
+
     /**
      * Run the database seeds.
      *
@@ -16,7 +17,7 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        for($numOfProducts=0; $numOfProducts<20; $numOfProducts++) {
+        for($numOfProducts=0; $numOfProducts<self::NUMBER_OF_PRODCTS; $numOfProducts++) {
             DB::table('product')->insert([
                 'id' => Str::uuid(),
                 'amount' => mt_rand(1, 100),

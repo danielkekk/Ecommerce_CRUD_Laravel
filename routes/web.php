@@ -15,5 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
   
 Route::get('/', 'HomeController@index');
+Route::resource('users', UserController::class);
 Route::resource('products', ProductController::class);
 Route::resource('home', HomeController::class);
