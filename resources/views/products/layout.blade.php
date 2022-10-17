@@ -18,6 +18,7 @@
                     <a class="navbar-brand" href="{{ route('home.index') }}">Home</a>
                     <ul class="nav navbar-nav">
                         <li><a href="{{ route('users.index') }}">Users</a></li>
+                        <li><a href="{{ route('users.create') }}">Create User</a></li>
                         <li><a href="{{ route('products.index') }}">Products List</a></li>
                         <li><a href="{{ route('products.create') }}">Create Product</a></li>
                     </ul>
